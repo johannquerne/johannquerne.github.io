@@ -1,0 +1,13 @@
+@keyframes example {
+    0% {background-image: url(../img/fleche-off.jpg);}
+    50% {background-image: url(../img/fleche-on.jpg);}
+	100% {background-image: url(../img/fleche-off.jpg);}
+}
+
+@-webkit-keyframes example {
+    0% {background-image: url(../img/fleche-off.jpg);}
+    50% {background-image: url(../img/fleche-on.jpg);}
+	100% {background-image: url(../img/fleche-off.jpg);}
+}
+
+

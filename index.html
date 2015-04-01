@@ -1,31 +1,33 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
   <title>Johann and Nishtha's Wedding</title>
   
-  <link rel="stylesheet" href="html5-doctor-reset-stylesheet.css?v=1.0">
-  <link rel="stylesheet" href="js/scrollorama/css/normalize.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css?v=1.0">
   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
   
-  <script src="js/scrollorama/js/jquery-1.9.1.min.js"></script>
-  <script src="js/scrollorama/js/jquery.lettering-0.6.1.min.js"></script>
-  <script src="js/scrollorama/js/jquery.scrollorama.js"></script>
-  
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
 </head>
 
 <body>
 
+  <script src="js/scrollorama/js/jquery-1.9.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 <div style="cursor:pointer; position:fixed; right:20px; bottom: 20px; margin:0 auto; background-image:url(img/fleche-off.jpg); height:62px; width:40px; -webkit-animation-name: example; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: infinite; animation-name: example; animation-duration: 2s; animation-iteration-count: infinite;"></div>
 
-<div class="scrollblock" style="width:100%;">
+<div class="container-fluid" style="width:100%;">
 	<div id="scene1" style="width:100%; float:left; background: url(img/top1.jpg) repeat-x; padding-top:60px;">
 		<div style="margin:0 auto; width: 1090px;">
 			<div style="float:left;"><img src="img/img1.jpg" /></div>
@@ -47,26 +49,7 @@
 		</div>
 	</div>
 </div>
-	<script>
-		$(document).ready(function() {
-			
-			// initialize the plugin, pass in the class selector for the sections of content (blocks)
-			var scrollorama = $.scrollorama({ blocks:'.scrollblock' });
-			
-			// assign function to add behavior for onBlockChange event
-			scrollorama.onBlockChange(function() {
-				var i = scrollorama.blockIndex;
-				$('#console')
-					.css('display','block')
-					.text('onBlockChange | blockIndex:'+i+' | current block: '+scrollorama.settings.blocks.eq(i).attr('id'));
-			});
-			
-			// animate the parallaxing
-			scrollorama
-				.animate('#scene2',{ delay: 300, duration: 800, property:'top', start:400, end:-800 });
-			
-		});
-	</script>
+
 
   
 </body>

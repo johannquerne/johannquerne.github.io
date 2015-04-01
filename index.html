@@ -3,12 +3,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
   <title>Johann and Nishtha's Wedding</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
+  
   <link rel="stylesheet" href="html5-doctor-reset-stylesheet.css?v=1.0">
+  <link rel="stylesheet" href="js/scrollorama/css/normalize.css">
+
   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
   
   <script src="js/scrollorama/js/jquery-1.9.1.min.js"></script>
@@ -32,8 +33,6 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="elephant"><img src="img/elephant.jpg" /></div>
 	
 	<div id="scene2" style="clear:both; float:left; margin-top: 100px; width:100%; background: url(img/top2.jpg) repeat-x; padding-top:90px;">
 		<div style="margin:0 auto; width: 580px; margin-top:20px;"><img src="img/title1.jpg" /></div>
@@ -64,8 +63,7 @@
 			
 			// animate the parallaxing
 			scrollorama
-				.animate('#elephant',{ delay: 300, duration: 300, property:'right', start:-1400, end:200})
-				.animate('#scene2',{ delay: 250, duration: 800, property:'top', start:400, end:-800 });
+				.animate('#scene2',{ delay: 300, duration: 800, property:'top', start:400, end:-800 });
 			
 		});
 	</script>

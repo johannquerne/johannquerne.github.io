@@ -1,3 +1,5 @@
+body {font-family: 'Josefin Slab', serif; color:#333333;}
+
 @keyframes example {
     0% {background-image: url(../img/fleche-off.jpg);}
     50% {background-image: url(../img/fleche-on.jpg);}

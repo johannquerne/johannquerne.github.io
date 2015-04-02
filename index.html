@@ -22,7 +22,7 @@
 
 <body>
 
-<div style="cursor:pointer; z-index:100; position:fixed; right:20px; bottom: 20px; margin:0 auto; background-image:url(img/fleche-off.jpg); height:62px; width:40px; -webkit-animation-name: example; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: infinite; animation-name: example; animation-duration: 2s; animation-iteration-count: infinite;"></div>
+<div id="scrolldown" style="cursor:pointer; z-index:100; position:fixed; right:20px; bottom: 20px; margin:0 auto; background-image:url(img/fleche-off.jpg); height:62px; width:40px; -webkit-animation-name: example; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: infinite; animation-name: example; animation-duration: 2s; animation-iteration-count: infinite;"></div>
 
 <div class="container-fluid" style="width:100%;">
 	<div id="scene1" class="row" style="background: url(img/top1.jpg) repeat-x; padding-top:60px;">
@@ -35,22 +35,85 @@
 			<div class="col-md-6"><img src="img/india-gate.jpg" class="img-responsive center-block" /></div>
 			<div class="col-md-6">
 				<div style="margin-top:40px;"><img src="img/text1.jpg" class="img-responsive" />
-				<p style="padding:10px 0 0 65px; color:#333333; font-family: 'Josefin Slab', serif;">The wedding will take place at the <a href="http://en.wikipedia.org/wiki/India_Habitat_Centre">India Habitat Center</a>
+				<p style="padding:10px 0 0 65px;">The wedding will take place at the <a href="http://en.wikipedia.org/wiki/India_Habitat_Centre">India Habitat Center</a>
 	located in the heart of New Delhi, closed to the famous <a href="http://en.wikipedia.org/wiki/Lodi_Gardens">Lodi Garden</a>.</p></div>
 				<div style="margin-top:40px;"><img src="img/text2.jpg" class="img-responsive" />
-				<p style="padding:10px 0 0 65px; color:#333333; font-family: 'Josefin Slab', serif;">xxx	</p></div>
+				<p style="padding:10px 0 0 65px;">La ceremonie de mariage se deroulera dans le batiment du India Habitat center, citue au coeur de New Delhi
+				<a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/Xo7mmxMn8jU" >Discover the Fort</a>
+				</p></div>				
 			</div>
 		</div>
 		
 	<div id="scene3" class="row" style="margin-top: 100px; background: url(img/top3.jpg) repeat-x; padding-top:180px;">
 		<div class="col-md-12" style="margin-top:20px;"><img src="img/title2.jpg" class="img-responsive center-block" /></div>
 		<div class="col-md-6"><img src="img/map-india.jpg" class="img-responsive center-block" /></div>
-		<div class="col-md-6"></div>
+		<div class="col-md-6">
+			<div style="margin-top:40px;"><img src="img/text3.jpg" class="img-responsive" />
+				<p style="padding:10px 0 0 65px;"><strong>Depuis Paris:</strong><br />Vous trouverez des vols directs (6h30) ou avec une escale (12h) depuis Paris. Nous vous conseillons de regarder sur <a href="http://www.skyscanner.fr/" target="_blank">Skyscanner</a> ou <a href="http://www.kayak.fr/" target="_blank">Kayak</a> pour trouver les prix les plus interessants.</p>
+				<p style="padding:10px 0 0 65px;"><strong>From Singapore:</strong></p>
+			</div>
+			<div style="margin-top:40px;"><img src="img/text4.jpg" class="img-responsive" />
+				<p></p>
+			</div>
+		</div>
 	</div>
+	
+	<div id="scene4" class="row" style="margin-top: 100px; background: url(img/top4.jpg) repeat-x; padding-top:50px;">
+		<div class="col-md-12" style="margin-top:20px;"><img src="img/title2.jpg" class="img-responsive center-block" /></div>
+		<div class="col-md-6"></div>
+		<div class="col-md-6">
+		<p></p>
+		</div>
+	</div>
+	
 </div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div>
+          <iframe width="100%" height="350" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script>
+	
+	
+//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+function autoPlayYouTubeModal(){
+  var trigger = $("body").find('[data-toggle="modal"]');
+  trigger.click(function() {
+    var theModal = $(this).data( "target" ),
+    videoSRC = $(this).attr( "data-theVideo" ), 
+    videoSRCauto = videoSRC+"?autoplay=1&html5=1" ;
+    $(theModal+' iframe').attr('src', videoSRCauto);
+    $(theModal+' button.close').click(function () {
+        $(theModal+' iframe').attr('src', videoSRC);
+    });   
+  });
+}
 
+$(document).ready(function(){
+  autoPlayYouTubeModal();
+});
+	
+	$("#scrolldown").click(function() {
+		
+	
+		$('html, body').animate({
+			scrollTop: $("#scene2").offset().top+5
+		}, 1000);
+	});
+	
+	</script>
+  
 </body>
 </html>

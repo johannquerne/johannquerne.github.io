@@ -59,11 +59,12 @@
 	</div>
 	
 	<div id="scene4" class="row" style="margin-top: 100px; background: url(img/top4.jpg) repeat-x; padding-top:50px;">
-		<div class="col-md-12" style="margin-top:20px;"><img src="img/title2.jpg" class="img-responsive center-block" /></div>
+		<div class="col-md-12" style="margin-top:20px;"><img src="img/title3.jpg" class="img-responsive center-block" /></div>
 		<div class="col-md-6"></div>
 		<div class="col-md-6">
 		<p></p>
 		</div>
+		<div class="col-md-12" style="margin-top:20px;"><img src="img/temple.jpg" class="img-responsive center-block" /></div>
 	</div>
 	
 </div>
@@ -105,12 +106,20 @@ $(document).ready(function(){
   autoPlayYouTubeModal();
 });
 	
+	var scene = 1;
+	
 	$("#scrolldown").click(function() {
 		
+		scene++;
 	
 		$('html, body').animate({
-			scrollTop: $("#scene2").offset().top+5
+			scrollTop: $("#scene"+scene).offset().top+5
 		}, 1000);
+
+		if (scene == 4) {
+			scene = 0;
+		}
+		
 	});
 	
 	</script>
